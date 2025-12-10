@@ -3,7 +3,7 @@ import datetime as dt
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="hari",
+  user="root",
   password="1234",
   database="workload"
 )

@@ -11,15 +11,15 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE TheoryCourse (
-    course_code VARCHAR(10),
+    course_code VARCHAR(10) unique key,
     course_name VARCHAR(100),
     semester INT,
-    sessionn VARCHAR(100),3
+    sessionn VARCHAR(100),
     CONSTRAINT pk_cccn PRIMARY KEY(course_code,course_name)
 );
 
 CREATE TABLE PracticalCourse (
-    course_code VARCHAR(10),
+    course_code VARCHAR(10) unique key,
     course_name VARCHAR(100),
     semester INT,
     sessionn VARCHAR(100),
@@ -27,7 +27,7 @@ CREATE TABLE PracticalCourse (
 );
 
 CREATE TABLE ProjectCourse(
-    course_code VARCHAR(10),
+    course_code VARCHAR(10) unique key,
     course_name VARCHAR(100),
     semester INT,
     sessionn VARCHAR(100),
@@ -38,7 +38,7 @@ CREATE TABLE VAC(
     course_code VARCHAR(10),
     course_name VARCHAR(100),
     semester INT,
-    sessionn VARCHAR(100),3
+    sessionn VARCHAR(100),
     CONSTRAINT pk_cccn PRIMARY KEY(course_code,course_name)
 );
 
@@ -86,14 +86,6 @@ CREATE TABLE Dept_duty (
     faculty_id VARCHAR(50),
     Responsibilty VARCHAR(100),
     primary key(faculty_id,Responsibilty)
-);
-
-CREATE TABLE VAC(
-    course_code VARCHAR(10),
-    course_name VARCHAR(100),
-    semester INT,
-    sessionn VARCHAR(100),
-    CONSTRAINT pk_cccn PRIMARY KEY(course_code,course_name)
 );
 
 INSERT INTO Users VALUES
@@ -161,15 +153,14 @@ INSERT INTO TheoryCourse VALUES
   ('UIT2736', 'Text Analysis',7,'feb-jul'),
   ('PIF2202', 'Data Engineering and Management',2,'feb-jul'),
   ('UIT2627', 'Introduction to AR/VR/MR/XR', 6,'feb-jul'),
-  ('PIF2201', 'Deep Learning for Computer Vision',null,'feb-jul'),
-  ('UIT2046', 'Introduction to Data Science', null,'feb-jul'),
+  ('PIF2201', 'Deep Learning for Computer Vision',8,'feb-jul'),
+  ('UIT2046', 'Introduction to Data Science', 8,'feb-jul'),
   ('UIT1831', 'Soft Computing and its applications', 8,'feb-jul'),
   ('UMA2476','Probability and Statistics',4,'feb-jul'),
   ('AHS2476','Indian Constitution',4,'feb-jul'),
 
   ('PIF2102','Advanced Artificial Intelligence',1, 'sep-dec'),
   ('UIT2522', 'Optimization Techniques for Machine Learning(Honors)',5, 'sep-dec'),
-  ('UIT2521', 'Information Theory and Application(PE-1)',5, 'sep-dec'),
   ('UIT1731', 'Introduction to Deep Learning(PE-IV)',8, 'sep-dec'),
   ('PIF2101', 'Design and Analysis of Concurrent Structures and Algorithm',1, 'sep-dec'),
   ('PIF2321', 'Reinforcement Learning(PE-IV)',3, 'sep-dec'),
